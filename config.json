@@ -2,7 +2,7 @@
   "debug": true,
   "wallets_file": "local_wallets.csv",
   "log_file": "default.log",
-  "network": "arbitrum one",
+  "working_network": "arbitrum one",
   "networks": {
     "ethereum": {
       "rpc": "https://eth.llamarpc.com",
@@ -15,7 +15,7 @@
     },
     "aptos": {
       "rpc": "https://fullnode.mainnet.aptoslabs.com",
-      "explorer": ""
+      "explorer": "ttps://explorer.aptoslabs.com/"
     }
   },
   "delay": {
