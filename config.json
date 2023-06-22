@@ -1,0 +1,33 @@
+{
+  "debug": true,
+  "wallets_file": "local_wallets.csv",
+  "log_file": "default.log",
+  "network": "arbitrum one",
+  "networks": {
+    "ethereum": {
+      "rpc": "https://eth.llamarpc.com",
+      "explorer": "https://etherscan.io/",
+      "max_gwei": "30"
+    },
+    "arbitrum one": {
+      "rpc": "https://arb-mainnet-public.unifra.io",
+      "explorer": "https://arbiscan.io/"
+    },
+    "aptos": {
+      "rpc": "https://fullnode.mainnet.aptoslabs.com",
+      "explorer": ""
+    }
+  },
+  "delay": {
+    "wallet": [
+      5,
+      30
+    ]
+  },
+  "amount": {
+    "ETH": [
+      0.001,
+      0.0011
+    ]
+  }
+}
