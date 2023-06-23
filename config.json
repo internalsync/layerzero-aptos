@@ -7,27 +7,28 @@
     "ethereum": {
       "rpc": "https://eth.llamarpc.com",
       "explorer": "https://etherscan.io/",
-      "max_gwei": "30"
+      "max_gwei": 20
     },
     "arbitrum one": {
       "rpc": "https://arb-mainnet-public.unifra.io",
-      "explorer": "https://arbiscan.io/"
+      "explorer": "https://arbiscan.io/",
+      "max_gwei": 100
     },
     "aptos": {
-      "rpc": "https://fullnode.mainnet.aptoslabs.com",
-      "explorer": "ttps://explorer.aptoslabs.com/"
+      "rpc": "https://fullnode.mainnet.aptoslabs.com/v1",
+      "explorer": "https://explorer.aptoslabs.com/"
     }
   },
   "delay": {
     "wallet": [
-      5,
-      30
+      3,
+      5
     ]
   },
   "amount": {
     "ETH": [
       0.001,
-      0.0011
+      0.002
     ]
   }
 }

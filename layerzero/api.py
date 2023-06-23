@@ -56,6 +56,18 @@ class Node:
     def chain_id(self):
         return self._web3.eth.chain_id
 
+    def wait_for_gas(self, max_gwei, delay=15, logger=None):
+        while True:
+            gwei = Web3.from_wei(self.gas_price, 'gwei')
+            if gwei < max_gwei:
+                if logger:
+                    logger.debug(f'Gas is {gwei} gwei')
+                break
+            else:
+                if logger:
+                    logger.debug(f'Gas {gwei} gwei > {max_gwei} gwei, waiting for the cheap gas')
+                time.sleep(delay)
+
     def get_block(self, block_number):
         return self._web3.eth.get_block(block_number)
 
@@ -157,7 +169,7 @@ class Account:
                 'maxPriorityFeePerGas': self._node.max_priority_fee,
             })
         # print(tx['maxFeePerGas'], tx['maxPriorityFeePerGas'])
-        if chain_id in (42161, ):  # gas fix (arbitrum one)
+        if chain_id in (42161,):  # gas fix (arbitrum one)
             tx['maxFeePerGas'] = int(tx['maxFeePerGas'] * 1.25)
         tx['gas'] = self._web3.eth.estimate_gas(tx)
         return tx
@@ -254,7 +266,6 @@ class Erc20Token(Contract):
     @cached_property
     def symbol(self):
         return self.functions.symbol().call()
-
 
 # class UniswapV2Exchange(Contract):
 #     def __init__(self, node, name, address, abi=None):

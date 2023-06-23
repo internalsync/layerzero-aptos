@@ -7,14 +7,6 @@ from web3 import Web3
 from decimal import Decimal, getcontext
 
 
-def random_decimal(a: float, b: float, extra_precision: int = 1) -> Decimal:
-    getcontext().prec = max(len(str(a).split('.')[1]), len(str(b).split('.')[1])) + 1 + extra_precision
-
-    min_val, max_val = min(a, b), max(a, b)
-
-    return Decimal(min_val) + (Decimal(max_val) - Decimal(min_val)) * Decimal(random.random())
-
-
 def load_lines(filename):
     with open(filename) as f:
         return [row.strip() for row in f if row and not row.startswith('#')]
