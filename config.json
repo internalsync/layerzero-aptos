@@ -1,6 +1,6 @@
 {
   "debug": true,
-  "wallets_file": "local_wallets.csv",
+  "wallets_file": "wallets.csv",
   "log_file": "default.log",
   "working_network": "arbitrum one",
   "networks": {
