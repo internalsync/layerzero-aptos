@@ -10,3 +10,5 @@
 * Change amounts and delays in `config.json`
 * Fill `wallets.csv` with your wallets data
 * Run `python main.py`
+
+* cool
